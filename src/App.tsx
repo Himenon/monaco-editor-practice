@@ -1,18 +1,15 @@
 import * as React from "react";
-import * as monaco from "monaco-editor";
 import { Styles } from "./App.Styles";
+import Editor from "@monaco-editor/react";
 
 function App() {
-  React.useEffect(() => {
-    monaco.editor.create(document.getElementById("container"), {
-      value: 'console.log("Hello, world")',
-      language: "javascript",
-    });
-  });
-
   return (
     <Styles>
-      <div id="container"></div>
+      <Editor
+        height="90vh"
+        defaultLanguage="javascript"
+        defaultValue="// some comment"
+      />
     </Styles>
   );
 }
