@@ -45,6 +45,9 @@ const generateRangeError = ({ editor, monaco }: MonacoEditorRef) => {
   if (!textModel) {
     return;
   }
+  /**
+   * @see https://github.com/microsoft/monaco-editor/issues/790
+   */
   monaco.editor.setModelMarkers(textModel, "test", [
     {
       startLineNumber: 2,
